@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>SecureText — Morse → SHA-512 (Recoverable)</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0a0f24, #081229, #0b1a36);
+            background-size: 400% 400%;
+            animation: gradientMove 12s ease infinite;
+            color: #fff;
+            min-height: 100vh;
+            padding-top: 40px;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 25px;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.4);
+            transition: transform .2s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-4px);
+        }
+
+        input, textarea {
+            background: rgba(255,255,255,0.07) !important;
+            border-radius: 12px !important;
+            border: 1px solid rgba(255,255,255,0.15) !important;
+            color: #fff !important;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #cdd3df !important;
+        }
+
+        .btn-encrypt {
+            background: linear-gradient(90deg, #2af598, #009efd);
+            font-weight: 600;
+            color: #000;
+            border-radius: 30px;
+            padding: 10px 22px;
+            border: none;
+        }
+
+        .btn-decrypt {
+            background: linear-gradient(90deg, #f6d365, #fda085);
+            font-weight: 600;
+            color: #000;
+            border-radius: 30px;
+            padding: 10px 22px;
+            border: none;
+        }
+
+        .result-box {
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 15px;
+            border-left: 4px solid #00e1ff;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #9aa3b8;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2 class="text-center fw-bold mb-1">🔐 SecureText Encryption</h2>
+    <p class="text-center text-secondary mb-4">Convert Text → Morse → SHA-512, and recover it with only hash + key.</p>
+
+    {% if error_message %}
+    <div class="alert alert-danger text-center">{{ error_message }}</div>
+    {% endif %}
+
+    <div class="row g-4">
+
+        <!-- Encrypt Section -->
+        <div class="col-md-6">
+            <div class="glass-card">
+                <h4 class="mb-2">🔒 Encrypt</h4>
+                <p class="text-secondary">Enter text + key → get Morse + SHA-512 (no ciphertext shown).</p>
+
+                <form method="POST">
+                    <input type="hidden" name="action" value="encrypt">
+
+                    <label class="mt-2">Enter Text</label>
+                    <textarea class="form-control" rows="3" name="plain_text" placeholder="Type something here..."></textarea>
+
+                    <label class="mt-3">Security Key</label>
+                    <input type="password" class="form-control" name="enc_key" placeholder="Your secret key">
+
+                    <button class="btn-encrypt mt-3 w-100">Generate SHA-512</button>
+                </form>
+
+                {% if encrypt_result %}
+                <div class="result-box mt-3">
+                    <strong>Morse Code:</strong>
+                    <div class="text-info mt-1">{{ encrypt_result.morse }}</div>
+
+                    <hr>
+
+                    <strong>SHA-512 (Morse + Key):</strong>
+                    <div class="text-warning mt-1" style="word-break: break-all;">
+                        {{ encrypt_result.hash }}
+                    </div>
+
+                    <small class="text-secondary d-block mt-2">Save this hash — required for decryption.</small>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Decrypt Section -->
+        <div class="col-md-6">
+            <div class="glass-card">
+                <h4 class="mb-2">🔓 Decrypt</h4>
+                <p class="text-secondary">Paste SHA-512 + key → get original text back.</p>
+
+                <form method="POST">
+                    <input type="hidden" name="action" value="decrypt">
+
+                    <label class="mt-2">SHA-512 Hash</label>
+                    <input type="text" class="form-control" name="provided_hash" placeholder="Paste hash here...">
+
+                    <label class="mt-3">Security Key</label>
+                    <input type="password" class="form-control" name="dec_key" placeholder="Same key used in encryption">
+
+                    <button class="btn-decrypt mt-3 w-100">Recover Original</button>
+                </form>
+
+                {% if decrypt_result %}
+                <div class="result-box mt-3">
+                    <strong>Original Text:</strong>
+                    <div class="text-success mt-1">{{ decrypt_result.original }}</div>
+
+                    <hr>
+
+                    <strong>Recomputed Hash:</strong>
+                    <div style="word-break: break-all;"><code>{{ decrypt_result.recomputed }}</code></div>
+
+                    {% if decrypt_result.verification %}
+                    <div class="text-success fw-bold mt-2">✔ Hash Verified — Correct Key</div>
+                    {% else %}
+                    <div class="text-danger fw-bold mt-2">✖ Hash Incorrect — Wrong Key or Data</div>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+
+    <footer>© 2025 SecureText • Designed by You ❤️</footer>
+
+</div>
+
+</body>
+</html>
