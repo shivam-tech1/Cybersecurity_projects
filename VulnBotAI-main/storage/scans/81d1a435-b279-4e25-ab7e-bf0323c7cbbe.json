@@ -1,0 +1,124 @@
+{
+  "id": "81d1a435-b279-4e25-ab7e-bf0323c7cbbe",
+  "target": "tops-int.com",
+  "targetType": "domain",
+  "mode": "Basic Scan",
+  "status": "completed",
+  "progress": 100,
+  "totalTools": 11,
+  "completedTools": 11,
+  "logs": [
+    "[2026-05-25T06:10:51.208Z] Initializing Basic Scan scan for tops-int.com...",
+    "[2026-05-25T06:10:51.209Z] Starting tool: robots.txt...",
+    "[2026-05-25T06:10:52.159Z] Tool robots.txt completed.",
+    "[2026-05-25T06:10:52.159Z] Starting tool: DNS Lookup...",
+    "[2026-05-25T06:10:52.189Z] Tool DNS Lookup completed.",
+    "[2026-05-25T06:10:52.189Z] Starting tool: WHOIS...",
+    "[2026-05-25T06:10:52.189Z] Tool WHOIS completed.",
+    "[2026-05-25T06:10:52.189Z] Starting tool: Wappalyzer...",
+    "[2026-05-25T06:10:52.895Z] Tool Wappalyzer completed.",
+    "[2026-05-25T06:10:52.895Z] Starting tool: TXT Records...",
+    "[2026-05-25T06:10:52.927Z] Tool TXT Records completed.",
+    "[2026-05-25T06:10:52.927Z] Starting tool: Security Headers...",
+    "[2026-05-25T06:10:53.746Z] Tool Security Headers completed.",
+    "[2026-05-25T06:10:53.746Z] Starting tool: SSL/TLS...",
+    "[2026-05-25T06:10:53.746Z] Tool SSL/TLS completed.",
+    "[2026-05-25T06:10:53.746Z] Starting tool: Port Scan 0-65535...",
+    "[2026-05-25T06:10:53.746Z] Tool Port Scan 0-65535 completed.",
+    "[2026-05-25T06:10:53.746Z] Starting tool: URL Extraction...",
+    "[2026-05-25T06:10:58.357Z] Tool URL Extraction completed.",
+    "[2026-05-25T06:10:58.357Z] Starting tool: WhatWeb...",
+    "[2026-05-25T06:10:59.436Z] Tool WhatWeb completed.",
+    "[2026-05-25T06:10:59.436Z] Starting tool: Subfinder...",
+    "[2026-05-25T06:10:59.436Z] Tool Subfinder completed.",
+    "[2026-05-25T06:10:59.436Z] Starting AI Analysis of all tool outputs...",
+    "[2026-05-25T06:11:23.843Z] Scan completed successfully."
+  ],
+  "results": {
+    "robots.txt": "User-agent: *\nDisallow:\n\nUser-agent: Googlebot\nDisallow:\n\nUser-agent: AdsBot-Google\nDisallow:\n\nUser-agent: Googlebot-Image\nDisallow:\n\nSitemap: https://www.tops-int.com/sitemap.xml\nLms: https://www.tops-int.com/llms.txt\n",
+    "DNS Lookup": "\"Error: queryAny ECONNREFUSED tops-int.com\"",
+    "WHOIS": "Domain Name: TOPS-INT.COM\nRegistry Domain ID: 2289654512_DOMAIN_COM-VRSN\nRegistrar WHOIS Server: whois.registrar.com\nRegistrar URL: http://www.registrar.com\nUpdated Date: 2024-01-15T10:00:00Z\nCreation Date: 2018-07-22T14:30:00Z\nRegistry Expiry Date: 2028-07-22T14:30:00Z\nRegistrar: Example Registrar, Inc.\nRegistrar IANA ID: 1234\nDomain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited\nName Server: NS1.VULNBOT.PRO\nName Server: NS2.VULNBOT.PRO\nDNSSEC: unsigned",
+    "Wappalyzer": "Detected Technologies for tops-int.com via Active Passive Probe:\n- CMS: Joomla (Confidence: 100%)\n- Frontend: React (Confidence: 95%)\n- CSS Engine: Tailwind CSS (Confidence: 90%)\n- Web Server / Tech: nginx (Confidence: 100%)\n- Analytics: Google Tag Manager / Analytics (Confidence: 100%)",
+    "TXT Records": "\"Error: queryTxt ECONNREFUSED tops-int.com\"",
+    "Security Headers": "{\n  \"server\": \"nginx\",\n  \"content-type\": \"text/html; charset=UTF-8\",\n  \"connection\": \"keep-alive\",\n  \"vary\": \"Accept-Encoding\",\n  \"cache-control\": \"max-age=0, must-revalidate, no-store, nocache, private, public\",\n  \"date\": \"Mon, 25 May 2026 06:10:53 GMT\",\n  \"pragma\": \"no-cache\",\n  \"expires\": \"Sun, 02 Jan 1990 00:00:00 GMT\",\n  \"set-cookie\": [\n    \"XSRF-TOKEN=eyJpdiI6IjhxZ0V3N3NNVzBtN3ovWXlDZHZ0K0E9PSIsInZhbHVlIjoiRG9oUlRlMy82aVpvakFYdFN2VXAveklSMmR1dzh1ay85ZjJ4U2ZHN0VkVHJyMWtZNGxONmNMaTlvODQ1RmtGczdUT1pLQjByTlI3SmVrMDkvMDB6THlaT0w5OUNkMFA2YTBDVVBCSmdpTXZWR21SdFJFOU82MGVMekFFc1RyQ0MiLCJtYWMiOiI1MDE2ZjgxMTJlNTFiNTBhODNjMTU1ODY3MjUzMGNjY2Q3ODI5ZmI4MzlkZWRkN2NiYjBlOTlmYTYyNWYwOGRmIiwidGFnIjoiIn0%3D; expires=Mon, 25-May-2026 08:10:53 GMT; Max-Age=7200; path=/; samesite=lax\",\n    \"tops_technologies_session=eyJpdiI6IlZxRTJNTTFuMUhzOGdzbXUwL1VPZ2c9PSIsInZhbHVlIjoiaGJzUko2QmFXYklxMTM3d2QzMUwySFVKdVo2ZGJVK3BMeG9PSGFsQVZUVkVWeTFRNkRFblVUdWFhRzlQTnh6bHN3ZFRPaGdhTEZkR3QrVGhtMTN4NmhEdGo2bnN6TjFjVEhCZEVXSFlqK3F4YkE1eUhSZnRWWldzUHl2WnNrVEQiLCJtYWMiOiJkOWU5ZmQ3YzZiNGUxM2RjYTQyYTcyNjBkMWVkODI3Mzg0MzM1M2ZiODZiZTY2OGExYTA4MDllODVlNWU2Y2JkIiwidGFnIjoiIn0%3D; expires=Mon, 25-May-2026 08:10:53 GMT; Max-Age=7200; path=/; httponly; samesite=lax\"\n  ],\n  \"strict-transport-security\": \"max-age=31536000; includeSubDomains\",\n  \"x-frame-options\": \"ALLOW-FROM www.learnvern.com\",\n  \"content-security-policy\": \"frame-ancestors www.learnvern.com\",\n  \"x-content-type-options\": \"nosniff\"\n}",
+    "SSL/TLS": "SSL/TLS Analysis for tops-int.com\n- Common Name: tops-int.com\n- Issuer: Let's Encrypt Authority R3 / Cloudflare SSL CA\n- Valid From: 2026-01-01\n- Valid Until: 2027-01-01\n- Key Size: 2048/256 bits (ECC/RSA)\n- Protocols: TLSv1.2, TLSv1.3 enabled\n- Vulnerabilities: \n  * Heartbleed: SECURE (NO)\n  * Poodle: SECURE (NO)\n  * Logjam: SECURE (NO)\n- Cipher Suites: Strong (AES-GCM, CHACHA20-POLY1305)",
+    "Port Scan 0-65535": "Nmap scan report for tops-int.com\nPORT     STATE SERVICE\n22/tcp   open  ssh\n80/tcp   open  http\n443/tcp  open  https\n8080/tcp closed http-proxy\n\nNmap done: 1 IP address (1 host up) scanned passively in 2.15 seconds",
+    "URL Extraction": "Discovered Active Endpoints/Access Panels for tops-int.com:\n- https://tops-int.com/contact-us (Status: 200 OK)\n- https://tops-int.com/ (Status: 200 OK)\n- https://tops-int.com/dashboard/ (Status: 200 OK)\n- https://tops-int.com/panel/ (Status: 200 OK)\n- https://tops-int.com/wp-admin/ (Status: 200 OK)\n- https://tops-int.com/admin/ (Status: 200 OK)",
+    "WhatWeb": "WhatWeb analysis for http://tops-int.com\n[200 OK] Detected Technologies for tops-int.com via Active Passive Probe:, - CMS: Joomla (Confidence: 100%), - Frontend: React (Confidence: 95%), - CSS Engine: Tailwind CSS (Confidence: 90%), - Web Server / Tech: nginx (Confidence: 100%), - Analytics: Google Tag Manager / Analytics (Confidence: 100%)",
+    "Subfinder": "Subdomains found for tops-int.com:\n- www.tops-int.com (ACTIVE (200 OK))\n- mail.tops-int.com (ACTIVE (MX Record))"
+  },
+  "findings": [
+    {
+      "name": "Missing Secure Attribute on Sensitive Session Cookie",
+      "severity": "Medium",
+      "cvss": 4.3,
+      "description": "The session cookie 'tops_technologies_session' is set without the 'Secure' attribute. This cookie governs user state and authentication sessions. Without the 'Secure' attribute, the browser may transmit this sensitive cookie over unencrypted HTTP connections if mixed-content links are loaded or if the user types the HTTP version of the URL, exposing the session identifier to interception via network-level eavesdropping or Man-in-the-Middle (MitM) attacks.",
+      "impact": "Session hijacking and unauthorized account access to user or administrative profiles.",
+      "remediation": "Configure the application framework or web server to enforce the 'Secure' attribute on all session and sensitive cookies. In PHP/Laravel configurations, set 'secure' to true in config/session.php or adjust php.ini settings: 'session.cookie_secure = On'.",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N",
+      "cwe": "CWE-614",
+      "owasp": "A05:2021-Security Misconfiguration",
+      "affected_url": "https://tops-int.com/",
+      "evidence": "tops_technologies_session=eyJpdiI6IlZxRTJNTTFuMUhzOGdzbXUwL1VPZ2c9PSIsInZhbHVlIjoiaGJzUko2QmFXYklxMTM3d2QzMUwySFVKdVo2ZGJVK3BMeG9PSGFsQVZUVkVWeTFRNkRFblVUdWFhRzlQTnh6bHN3ZFRPaGdhTEZkR3QrVGhtMTN4NmhEdGo2bnN6TjFjVEhCZEVXSFlqK3F4YkE1eUhSZnRWWldzUHl2WnNrVEQiLCJtYWMiOiJkOWU5ZmQ3YzZiNGUxM2RjYTQyYTcyNjBkMWVkODI3Mzg0MzM1M2ZiODZiZTY2OGExYTA4MDllODVlNWU2Y2JkIiwidGFnIjoiIn0%3D; expires=Mon, 25-May-2026 08:10:53 GMT; Max-Age=7200; path=/; httponly; samesite=lax",
+      "parameter": "tops_technologies_session",
+      "references": [
+        "https://owasp.org/www-community/controls/Secure_Cookie_Attribute",
+        "https://cwe.mitre.org/data/definitions/614.html"
+      ]
+    },
+    {
+      "name": "Deprecated Clickjacking Protection Directives (X-Frame-Options ALLOW-FROM)",
+      "severity": "Low",
+      "cvss": 3.1,
+      "description": "The application sends the 'X-Frame-Options' header configured with the 'ALLOW-FROM' directive. Modern browsers have deprecated and no longer support 'ALLOW-FROM', causing them to either ignore the header entirely or fallback to insecure configurations. While Content-Security-Policy (CSP) 'frame-ancestors' is also present, legacy clients and scrapers that do not interpret CSP correctly remain vulnerable to UI redressing (Clickjacking).",
+      "impact": "Attackers can frame the target website on legacy browsers, potentially tricking users into performing unintended administrative or account actions.",
+      "remediation": "Remove the obsolete 'X-Frame-Options: ALLOW-FROM' header. Rely entirely on the 'Content-Security-Policy: frame-ancestors' directive for clickjacking protection. In Nginx, replace the header with: add_header Content-Security-Policy \"frame-ancestors 'self' www.learnvern.com;\" always;",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:L/A:N",
+      "cwe": "CWE-1021",
+      "owasp": "A05:2021-Security Misconfiguration",
+      "affected_url": "https://tops-int.com/",
+      "evidence": "x-frame-options: ALLOW-FROM www.learnvern.com",
+      "parameter": "X-Frame-Options",
+      "references": [
+        "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options",
+        "https://owasp.org/www-project-secure-headers/#x-frame-options"
+      ]
+    },
+    {
+      "name": "Administrative Portal Exposure and Route Sprawl",
+      "severity": "Medium",
+      "cvss": 5.3,
+      "description": "Multiple distinct administrative paths (/wp-admin/, /admin/, and /panel/) are exposed publicly and return successful response codes (200 OK). Web Application Firewalls or directory brute-force protections are not currently restricting access to these paths. This sprawl increases the threat surface, permitting automated credential-stuffing campaigns and vulnerability scanning against sensitive management consoles.",
+      "impact": "Facilitates brute-force attacks and vulnerability exploitation against administrative interfaces, potentially resulting in full system compromise.",
+      "remediation": "Implement strict IP-based access controls on administrative paths in the Nginx configuration. For example: location ~ ^/(wp-admin|admin|panel) { allow 192.168.1.0/24; deny all; }",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "cwe": "CWE-200",
+      "owasp": "A05:2021-Security Misconfiguration",
+      "affected_url": "https://tops-int.com/wp-admin/",
+      "evidence": "Active Endpoints: https://tops-int.com/wp-admin/ (Status: 200 OK), https://tops-int.com/admin/ (Status: 200 OK), https://tops-int.com/panel/ (Status: 200 OK)",
+      "parameter": "N/A",
+      "references": [
+        "https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/01-Information_Gathering/04-Review_Webpage_Content_for_Information_Leakage",
+        "https://cwe.mitre.org/data/definitions/200.html"
+      ]
+    },
+    {
+      "name": "Exposure of Non-Standard Machine-Readable Assets (llms.txt)",
+      "severity": "Low",
+      "cvss": 2.7,
+      "description": "The robots.txt file references a custom 'llms.txt' file located at https://www.tops-int.com/llms.txt. While designed to aid large language models or automatic parsers, public inclusion of these maps or files can inadvertently reveal undocumented endpoints, developmental resources, or proprietary structural pathways to malicious actors conducting reconnaissance.",
+      "impact": "Information disclosure that assists attackers in mapping internal APIs, application structures, or documentation directories.",
+      "remediation": "Verify the contents of llms.txt to ensure absolutely no internal, pre-production, or sensitive pathways are disclosed. If not actively required for external LLM indexing, remove the entry from robots.txt.",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "cwe": "CWE-529",
+      "owasp": "A05:2021-Security Misconfiguration",
+      "affected_url": "https://www.tops-int.com/llms.txt",
+      "evidence": "Lms: https://www.tops-int.com/llms.txt",
+      "parameter": "robots.txt",
+      "references": [
+        "https://cwe.mitre.org/data/definitions/529.html"
+      ]
+    }
+  ],
+  "timestamp": "2026-05-25T06:10:51.208Z"
+}
