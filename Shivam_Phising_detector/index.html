@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShieldSecure | Phishing Link Detector</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="glow-bg"></div>
+    
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <i class="fas fa-shield-halbed"></i>
+                <span>Shield<span class="highlight">Secure</span></span>
+            </div>
+            <div class="badge">
+                <i class="fas fa-check-circle"></i> Enterprise Grade
+            </div>
+        </div>
+
+        <!-- Hero -->
+        <div class="hero">
+            <h1>Phishing URL <span class="gradient-text">Detector</span></h1>
+            <p>Real-time threat intelligence to detect fraudulent, malicious, or suspicious links before you click.</p>
+        </div>
+
+        <!-- Main Card -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-link"></i>
+                <h3>Analyze Suspicious Link</h3>
+            </div>
+            
+            <div class="input-group">
+                <input type="text" id="urlInput" placeholder="Paste URL here... (e.g., https://paypal.com.secure-login.net)">
+                <button id="analyzeBtn">
+                    <i class="fas fa-shield-virus"></i> Analyze Threat
+                </button>
+            </div>
+            
+            <div class="example-links">
+                <p><i class="fas fa-flask"></i> Test with these examples:</p>
+                <div class="example-buttons">
+                    <button class="ex-btn" data-url="http://paypal.com.verify-account.xyz/login">⚠️ Suspicious Sample 1</button>
+                    <button class="ex-btn" data-url="https://google.com-security-alert.com">⚠️ Suspicious Sample 2</button>
+                    <button class="ex-btn" data-url="https://www.amazon.in">✅ Safe Sample</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Card -->
+        <div id="resultCard" class="result-card hidden">
+            <div class="result-header">
+                <div>
+                    <i id="resultIcon" class="fas"></i>
+                    <span id="resultStatus">---</span>
+                </div>
+                <div class="result-actions">
+                    <button class="action-btn" id="copyReportBtn" title="Copy Report">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="result-details">
+                <p><strong>🔍 Analysis ID:</strong> <span id="analysisId">---</span></p>
+                <p><strong>🌐 Scanned URL:</strong> <span id="scannedUrl">-</span></p>
+                <p><strong>📊 Risk Score:</strong> <span id="riskScore">0</span><span>/100</span></p>
+                <div class="progress-bar">
+                    <div id="riskFill" class="progress-fill"></div>
+                </div>
+                <p id="verdictText" class="verdict"></p>
+                <div id="flagsList" class="flags-list"></div>
+            </div>
+        </div>
+
+        <!-- History Section -->
+        <div class="history-section">
+            <div class="history-header">
+                <div>
+                    <i class="fas fa-history"></i>
+                    <h3 style="display: inline-block; margin-left: 0.5rem;">Recent Scans</h3>
+                </div>
+                <button id="clearHistoryBtn" class="clear-btn">
+                    <i class="fas fa-trash-alt"></i> Clear All
+                </button>
+            </div>
+            <div id="historyList" class="history-list">
+                <p class="empty-history">No scans yet. Analyze a URL to see history.</p>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-brain"></i>
+                <h4>AI Heuristic Analysis</h4>
+                <p>Checks for URL obfuscation, @ symbols, misspelled domains.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-database"></i>
+                <h4>Threat Intel Feed</h4>
+                <p>Matches against known phishing databases.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-chart-line"></i>
+                <h4>Real-time Risk Score</h4>
+                <p>0 (Safe) to 100 (Critical) scoring system.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
