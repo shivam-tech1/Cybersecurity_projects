@@ -1,0 +1,6 @@
+{
+  "name": "VULNBOT AI",
+  "description": "Premium Automated Website Vulnerability Scanner & Pentesting Platform powered by AI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

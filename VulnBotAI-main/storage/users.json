@@ -1,0 +1,14 @@
+[
+  {
+    "email": "test@gmail.com",
+    "password": "Test@123"
+  },
+  {
+    "email": "admin@vulnbot.pro",
+    "password": "password123"
+  },
+  {
+    "email": "vishwasthummar@gmail.com",
+    "password": "password123"
+  }
+]
